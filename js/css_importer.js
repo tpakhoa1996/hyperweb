@@ -1,12 +1,14 @@
 (async () => {
 	const style = document.createElement('style');
 	const href = window.location.href;
-	document.head.appendChild(style);
 
 	let cssURL = null;
 	if (/^https?:\/\/+([^:/]+\.)?123duw\.com(\/.*)?$/.test(href)) {
-		cssURL = 'https://raw.githubusercontent.com/tpakhoa1996/hyperweb/main/css/123duw.css';
+		cssURL = 'https://raw.githubusercontent.com/tpakhoa1996/hyperweb/main/css/123duw.css?hash=1';
 	}
 
-	style.textContent = await (await fetch(`${cssURL}?hash=${Date.now()}`)).text();
+	if (cssURL !== null) {
+		style.textContent = await (await fetch(cssURL)).text();
+		document.head.appendChild(style);
+	}
 })();
