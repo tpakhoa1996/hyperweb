@@ -8,5 +8,5 @@
 		cssURL = 'https://raw.githubusercontent.com/tpakhoa1996/hyperweb/main/css/123duw.css';
 	}
 
-	style.textContent = await (await fetch(cssURL)).text();
+	style.textContent = await (await fetch(`${cssURL}?hash=${Date.now()}`)).text();
 })();
