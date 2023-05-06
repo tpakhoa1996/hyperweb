@@ -1,4 +1,4 @@
 .TxtContent {
 	letter-spacing: 0px !important;
-	word-break: break-word;
+	word-break: break-word !important;
 }
