@@ -1,34 +1,12 @@
-(() => {
-	let style = document.createElement('link', {
-		rel: 'stylesheet',
-		type: 'text/css',
-		href: ''
-	});
+(async () => {
+	const style = document.createElement('style');
+	const href = window.location.href;
+	document.head.appendChild(style);
 
-	const cssImporter = () => {
-		style.remove();
-		style = style.cloneNode(true)
-		const href = document.location.href;
-		if (/^https?:\/\/+([^:/]+\.)?123duw\.com(\/.*)?$/.test(href)) {
-			style.href = 'https://github.com/tpakhoa1996/hyperweb/blob/main/css/123duw.css';
-		}
-		document.head.append(style);
+	let cssURL = null;
+	if (/^https?:\/\/+([^:/]+\.)?123duw\.com(\/.*)?$/.test(href)) {
+		cssURL = 'https://raw.githubusercontent.com/tpakhoa1996/hyperweb/main/css/123duw.css';
 	}
 
-	cssImporter();
-
-	let currentURL = document.location.href;
-
-	const urlObserver = new MutationObserver(() => {
-		if (document.location.href !== currentURL) {
-			currentURL = window.location.href;
-			cssImporter();
-		}
-	});
-
-	urlObserver.observe(document, {childList: true, subtree: true});
-
-	window.addEventListener('beforeunload', () => {
-		urlObserver.disconnect();
-	});
+	style.textContent = await (await fetch(cssURL)).text();
 })();
