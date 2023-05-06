@@ -1,0 +1,6 @@
+@document
+url("123duw.com") {
+	body > :nth-last-child(3) {
+		display: none;
+	}
+}
