@@ -6,3 +6,7 @@
 :root {
 	--darkreader-neutral-background: #232526 !important;
 }
+
+#nsws {
+    display: none !important;
+}
