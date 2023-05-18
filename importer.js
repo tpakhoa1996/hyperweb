@@ -25,7 +25,7 @@
 		const run = () => {
 			Array.from(document.querySelectorAll('.content-chapter > p')).forEach(p => {
 				if (p.getAttributeNames().length > 0) {
-					p.replaceWith(`${window.getComputedStyle(p, '::before')['content']} ${p.textContent} ${window.getComputedStyle(p, '::after')['content']}`);
+					p.replaceWith(`${window.getComputedStyle(p, '::before')['content'].slice(1, -1)} ${p.textContent} ${window.getComputedStyle(p, '::after')['content'].slice(1, -1)}`);
 				}
 			});
 		}
