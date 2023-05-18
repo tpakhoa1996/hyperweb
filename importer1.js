@@ -38,7 +38,7 @@
 						affterText = affterText.slice(4);
 					}
 	
-					p.replaceWith(beforeText + p.textContent + affterText)
+					p.replaceWith(beforeText + p.textContent + affterText);
 				}
 			});
 		}
