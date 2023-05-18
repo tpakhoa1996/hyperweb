@@ -27,6 +27,7 @@
 			alert("running");
 			Array.from(document.querySelectorAll('.content-chapter > p')).forEach(p => {
 				if (p.getAttributeNames().length > 0) {
+					alert('checking');
 					let befforeText = p.getAttribute(window.getComputedStyle(p, '::before')['content'].split(/\(|\)/)[1]);
 					let afterText = p.getAttribute(window.getComputedStyle(p, '::after')['content'].split(/\(|\)/)[1]);
 	
