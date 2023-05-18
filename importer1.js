@@ -27,14 +27,8 @@
 			alert("running");
 			Array.from(document.querySelectorAll('.content-chapter > p')).forEach(p => {
 				if (p.getAttributeNames().length > 0) {
-					const beforeAttr = window.getComputedStyle(p, '::before')['content'].split(/\(|\)/)[1];
-					const afterAttr = window.getComputedStyle(p, '::after')['content'].split(/\(|\)/)[1];
-	
-					let beforeText = p.getAttribute(beforeAttr);
-					let affterText = p.getAttribute(afterAttr);
-	
-					p.setAttribute(beforeAttr, '');
-					p.setAttribute(afterAttr, '');
+					let befforeText = p.getAttribute(window.getComputedStyle(p, '::before')['content'].split(/\(|\)/)[1]);
+					let afterText = p.getAttribute(window.getComputedStyle(p, '::after')['content'].split(/\(|\)/)[1]);
 	
 					if (beforeText.endsWith('null')) {
 						beforeText = beforeText.slice(0, -4);
@@ -44,7 +38,7 @@
 						affterText = affterText.slice(4);
 					}
 	
-					p.textContent = beforeText + p.textContent + affterText;
+					p.replaceWith(beforeText + p.textContent + affterText)
 				}
 			});
 		}
