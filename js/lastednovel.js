@@ -1,5 +1,6 @@
 (async () => {
     const run = () => {
+        alert("running");
         Array.from(document.querySelectorAll('.content-chapter > p')).forEach(p => {
             if (p.getAttributeNames().length > 0) {
                 const beforeAttr = window.getComputedStyle(p, '::before')['content'].split(/\(|\)/)[1];
