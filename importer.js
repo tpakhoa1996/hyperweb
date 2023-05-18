@@ -22,24 +22,21 @@
 	let scriptURL = null;
 	if (/^https?:\/\/+([^:/]+\.)?lastestnovel\.com(\/.*)?$/.test(href)) {
 		// scriptURL = 'https://raw.githubusercontent.com/tpakhoa1996/hyperweb/main/js/lastednovel.js?hash=5';
-		alert("testing");
 		const run = () => {
-			alert("running");
 			Array.from(document.querySelectorAll('.content-chapter > p')).forEach(p => {
 				if (p.getAttributeNames().length > 0) {
-					alert('checking');
-					let befforeText = p.getAttribute(window.getComputedStyle(p, '::before')['content'].split(/\(|\)/)[1]);
+					let beforeText = p.getAttribute(window.getComputedStyle(p, '::before')['content'].split(/\(|\)/)[1]);
 					let afterText = p.getAttribute(window.getComputedStyle(p, '::after')['content'].split(/\(|\)/)[1]);
 	
 					if (beforeText.endsWith('null')) {
 						beforeText = beforeText.slice(0, -4);
 					}
 	
-					if (affterText.startsWith('null')) {
-						affterText = affterText.slice(4);
+					if (afterText.startsWith('null')) {
+						afterText = afterText.slice(4);
 					}
 	
-					p.replaceWith(beforeText + p.textContent + affterText);
+					p.replaceWith(beforeText + p.textContent + afterText);
 				}
 			});
 		}
