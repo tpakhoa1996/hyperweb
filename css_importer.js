@@ -25,6 +25,7 @@
 	}
 
 	if (scriptURL !== null) {
+		alert("Runing Script");
 		eval(await (await fetch(scriptURL)).text());
 	}
 })();
