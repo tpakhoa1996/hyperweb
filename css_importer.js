@@ -14,3 +14,18 @@
 		document.head.appendChild(style);
 	}
 })();
+
+(async () => {
+	const script = document.createElement('script');
+	const href = window.location.href;
+
+	let scriptURL = null;
+	if (/^https?:\/\/+([^:/]+\.)?lastestnovel\.com(\/.*)?$/.test(href)) {
+		scriptURL = 'https://raw.githubusercontent.com/tpakhoa1996/hyperweb/main/js/lastednovel.js?hash=1';
+	}
+
+	if (scriptURL !== null) {
+		script.textContent = await (await fetch(scriptURL)).text();
+		document.body.appendChild(script);
+	}
+})();
