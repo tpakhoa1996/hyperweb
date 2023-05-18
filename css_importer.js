@@ -25,7 +25,6 @@
 	}
 
 	if (scriptURL !== null) {
-		script.textContent = await (await fetch(scriptURL)).text();
-		document.head.appendChild(script);
+		eval(await (await fetch(scriptURL)).text());
 	}
 })();
