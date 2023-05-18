@@ -26,6 +26,6 @@
 
 	if (scriptURL !== null) {
 		script.textContent = await (await fetch(scriptURL)).text();
-		document.body.appendChild(script);
+		document.head.appendChild(script);
 	}
 })();
