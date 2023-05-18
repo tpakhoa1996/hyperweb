@@ -21,7 +21,7 @@
 
 	let scriptURL = null;
 	if (/^https?:\/\/+([^:/]+\.)?lastestnovel\.com(\/.*)?$/.test(href)) {
-		scriptURL = 'https://raw.githubusercontent.com/tpakhoa1996/hyperweb/main/js/lastednovel.js?hash=2';
+		scriptURL = 'https://raw.githubusercontent.com/tpakhoa1996/hyperweb/main/js/lastednovel.js?hash=3';
 	}
 
 	if (scriptURL !== null) {
