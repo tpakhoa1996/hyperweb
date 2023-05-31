@@ -1,0 +1,3 @@
+.nr_nr p {
+word-break: break-word !important;
+}
