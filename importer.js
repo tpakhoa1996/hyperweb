@@ -8,7 +8,7 @@
 	} else if (/^https?:\/\/+([^:/]+\.)?bqg126\.com(\/.*)?$/.test(href)) {
     	cssURL = 'https://raw.githubusercontent.com/tpakhoa1996/hyperweb/main/css/bqg126.css?hash=3';
 	} else if (/^https?:\/\/+([^:/]+\.)?yawen\.cc(\/.*)?$/.test(href)) {
-    	cssURL = 'https://raw.githubusercontent.com/tpakhoa1996/hyperweb/main/css/yawen.css?hash=1';
+    	cssURL = 'https://raw.githubusercontent.com/tpakhoa1996/hyperweb/main/css/yawen.css?hash=2';
 	}
 
 	if (cssURL !== null) {
